@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Budget</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="contenue">
+
+        <div>
+            <h1>Mon Budget</h1>
+        </div>
+
+        <div>
+            <div>
+                <label> Ajout
+                    <input id="pognon" type="text">
+                    <select>
+                        <option value="autres">Autres</option>
+                        <option value="aides">Aides</option>
+                        <option value="charge">Charge</option>
+                        <option value="eau">Eau</option>
+                        <option value="electricite">Electricite</option>
+                        <option value="gaz">Gaz</option>
+                        <option value="internet">Internet</option>
+                        <option value="loyer">Loyer</option>
+                        <option value="rente">Rente</option>
+                        <option value="salaire">Salaire</option>
+                        <option value="telephone">Telephone</option>
+                    </select>
+                    <select>
+                        <option value="pertes">Pertes</option>
+                        <option value="gain">Gains</option>
+                        <option value="epargne">Epargne</option>
+                    </select>
+                    <button id="envois">Envois</button>
+                </label>
+            </div>
+            <div>
+                <button id="resetAll">Reset All</button>
+            </div>
+        </div>
+
+        <div id="screen">
+
+            <div id="lost">
+            </div>
+
+            <div id="gains">
+            </div>
+
+            <div id="epargne">
+            </div>
+
+            <div id="result">
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>

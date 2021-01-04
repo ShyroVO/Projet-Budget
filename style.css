@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 62.5%;
+}
+
+#screen {
+    min-height: 5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: revert;
+}
+
+#screen div {
+    width: 25%;
+    height: 100%;
+}
+
+#gains {
+    color: green;
+    border: solid green 3px;
+}
+
+#lost {
+    color: red;
+    border: solid red 3px;
+}
+
+#epargne {
+    border: solid gray 3px;
+}
+
+#result {
+    border: solid lightgray 3px;
+    height: 5rem;
+}
