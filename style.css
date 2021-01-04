@@ -6,18 +6,32 @@
 
 body {
     font-size: 62.5%;
+    font-family: "Trebuchet MS", sans-serif;
 }
 
 #screen {
+    padding: 0.3rem;
     min-height: 5rem;
     width: 100%;
     display: flex;
     flex-direction: revert;
 }
 
-#screen div {
-    width: 25%;
+#screen #lost, #screen #gains, #screen #epargne, #result {
+    margin: 1rem;
+    padding: 0.3rem;
+    width: 33.33%;
     height: 100%;
+    border-radius: 1rem;
+    font-size: 1rem;
+}
+
+#result {
+    width: 93%;
+}
+
+#screen input {
+    width: 100%;
 }
 
 #gains {
@@ -26,7 +40,8 @@ body {
 }
 
 #lost {
-    color: red;
+    background: darkred;
+    color: white;
     border: solid red 3px;
 }
 
@@ -37,4 +52,14 @@ body {
 #result {
     border: solid lightgray 3px;
     height: 5rem;
+}
+
+#envoisLost, #envoisGain, #envoisEpargne {
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+button {
+    border: none;
+    padding: 0.4rem;
 }

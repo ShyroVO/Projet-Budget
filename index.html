@@ -16,51 +16,62 @@
             <h1>Mon Budget</h1>
         </div>
 
-        <div>
-            <div>
-                <label> Ajout
-                    <input id="pognon" type="text">
-                    <select>
-                        <option value="autres">Autres</option>
-                        <option value="aides">Aides</option>
-                        <option value="charge">Charge</option>
-                        <option value="eau">Eau</option>
-                        <option value="electricite">Electricite</option>
-                        <option value="gaz">Gaz</option>
-                        <option value="internet">Internet</option>
-                        <option value="loyer">Loyer</option>
-                        <option value="rente">Rente</option>
-                        <option value="salaire">Salaire</option>
-                        <option value="telephone">Telephone</option>
-                    </select>
-                    <select>
-                        <option value="pertes">Pertes</option>
-                        <option value="gain">Gains</option>
-                        <option value="epargne">Epargne</option>
-                    </select>
-                    <button id="envois">Envois</button>
-                </label>
-            </div>
-            <div>
-                <button id="resetAll">Reset All</button>
-            </div>
-        </div>
-
         <div id="screen">
 
-            <div id="lost">
-            </div>
+                <div id="lost">
+                    Pertes:<br>
+                    <div>
+                        <label>
+                            <input id="pognonLost" type="text" placeholder="Revenus a ajouter">
+                            <button id="envoisLost">Add</button>
+                        </label><br>
+                        <input class="lostFric" type="text" placeholder="Autres" required>
+                        <input class="lostFric" type="text" placeholder="Charge" required>
+                        <input class="lostFric" type="text" placeholder="Eau" required>
+                        <input class="lostFric" type="text" placeholder="Electricite" required>
+                        <input class="lostFric" type="text" placeholder="Gaz" required>
+                        <input class="lostFric" type="text" placeholder="Internet" required>
+                        <input class="lostFric" type="text" placeholder="Loyer" required>
+                        <input class="lostFric" type="text" placeholder="Telephone" required>
+                        <input class="lostFric" type="text" placeholder="Autre" required>
+                    </div>
+                </div>
 
-            <div id="gains">
-            </div>
+                <div id="gains">
+                    Revenus:<br>
+                    <div>
+                        <label>
+                            <input id="pognonGains" type="text" placeholder="Revenus a ajouter">
+                            <button id="envoisGain">Add</button>
+                        </label><br>
+                        <input class="gainFric" type="text" placeholder="Salaire" required>
+                        <input class="gainFric" type="text" placeholder="Aide" required>
+                        <input class="gainFric" type="text" placeholder="Rente" required>
+                        <input class="gainFric" type="text" placeholder="Autre" required>
+                    </div>
+                </div>
 
-            <div id="epargne">
-            </div>
+                <div id="epargne">
+                    Epargne:<br>
+                    <div>
+                        <label>
+                            <input id="pognonEpargne" type="text" placeholder="Revenus a ajouter">
+                            <button id="envoisEpargne">Add</button>
+                        </label><br>
+                        <input class="epargneFric" type="text" placeholder="Autre">
+                    </div>
+                </div>
 
-            <div id="result">
-            </div>
 
         </div>
+
+        <button id="calcul">Résultat</button>
+
+        <div id="result">
+            Total:
+        </div>
+
+        <button id="resetAll">Reset All</button>
 
     </div>
 
