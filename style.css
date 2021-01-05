@@ -18,7 +18,7 @@ body {
 }
 
 #screen #lost, #screen #gains, #screen #epargne, #result {
-    margin: 1rem;
+    margin: 0.5rem;
     padding: 0.3rem;
     width: 33.33%;
     height: 100%;
@@ -35,18 +35,21 @@ body {
 }
 
 #gains {
-    color: green;
+    background: #38C98D;
+    color: white;
     border: solid green 3px;
 }
 
 #lost {
-    background: darkred;
+    background: #EB2E6A;
     color: white;
     border: solid red 3px;
 }
 
 #epargne {
-    border: solid gray 3px;
+    background: #EBB22C;
+    color: white;
+    border: solid yellow 3px;
 }
 
 #result {

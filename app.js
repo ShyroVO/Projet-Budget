@@ -17,7 +17,7 @@ let epargneFric = document.getElementsByClassName('epargneFric');
 let lost = document.getElementById('lost');
 let gains = document.getElementById('gains');
 let epargnes = document.getElementById('epargne');
-let resultScreen = document.getElementById('result');
+let resultScreen = document.getElementById('resultScreen');
 
 // Add Button:
 let envoisGains = document.getElementById('envoisGain');
@@ -28,38 +28,44 @@ let envoisEpargne = document.getElementById('envoisEpargne');
 let resetAll = document.getElementById('resetAll');
 let calcul = document.getElementById('calcul');
 
+// TEST Function commune:
+function addItem (qui, val, tab){
+    let createDiv = document.createElement('div');
+    qui.appendChild(createDiv);
+    createDiv.innerHTML = val.value;
+    tab.push(Number.parseFloat(val.value));
+    console.log(tab);
+}
+
 // Function add Lost Money:
 function ajoutLost (){
     let createDiv = document.createElement('div');
     lost.appendChild(createDiv);
+    createDiv.className= "littleDiv";
     createDiv.innerHTML = enterValueLost.value;
     listePognonLost.push(Number.parseFloat(enterValueLost.value));
-
-    console.log(listePognonLost);
 }
 
 // Function add Money:
 function ajoutGain (){
     let createDiv = document.createElement('div');
     gains.appendChild(createDiv);
+    createDiv.className= "littleDiv";
     createDiv.innerHTML = enterValueGains.value;
     listePognonGain.push(Number.parseFloat(enterValueGains.value));
-
-    console.log(listePognonGain);
 }
 
 // Function add other Money:
 function ajoutEpargne (){
     let createDiv = document.createElement('div');
     epargnes.appendChild(createDiv);
+    createDiv.className= "littleDiv";
     createDiv.innerHTML = enterValueEpargne.value;
     listePognonEpargne.push(Number.parseFloat(enterValueEpargne.value));
-
-    console.log(listePognonEpargne);
 }
 
 // button events:
-envoisLost.addEventListener('click', ajoutLost)
+envoisLost.addEventListener('click', ajoutLost);
 envoisGains.addEventListener('click', ajoutGain);
 envoisEpargne.addEventListener('click', ajoutEpargne);
 
@@ -78,15 +84,30 @@ calcul.addEventListener('click', function (){
     }
 
     //Calcul:
-    let resultLost = listePognonLost.reduce(function (acumulateur, valueurs){
-        return acumulateur + valueurs;
+    let resultLost = listePognonLost.reduce(function (acumulateur, valeurs){
+        return acumulateur + valeurs;
     })
-    let resultGain = listePognonGain.reduce(function (acumulateur, valueurs){
-        return acumulateur + valueurs;
+    let resultGain = listePognonGain.reduce(function (acumulateur, valeurs){
+        return acumulateur + valeurs;
     })
-    let resultEpargne = listePognonEpargne.reduce(function (acumulateur, valueurs){
-        return acumulateur + valueurs;
+    let resultEpargne = listePognonEpargne.reduce(function (acumulateur, valeurs){
+        return acumulateur + valeurs;
     })
     let finalResult = ((resultGain + resultEpargne) - resultLost);
-    resultScreen.innerHTML += "<br>" + finalResult ;
+
+    //Screen of result:
+    resultScreen.innerHTML = finalResult ;
+})
+
+// Reset button / Clean all tab:
+let littleDiv = document.getElementsByClassName('littleDiv');
+
+resetAll.addEventListener('click', function (){
+    listePognonEpargne.splice(1, listePognonEpargne.length);
+    listePognonGain.splice(1, listePognonGain.length);
+    listePognonLost.splice(1, listePognonLost.length);
+    resultScreen.innerHTML = "";
+    for (let i = 0; i < littleDiv.length ; i++){
+        littleDiv[i].remove();
+    }
 })
