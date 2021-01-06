@@ -27,7 +27,7 @@ body {
 }
 
 #result {
-    width: 93%;
+    width: 50%;
 }
 
 #screen input {
@@ -65,4 +65,17 @@ body {
 button {
     border: none;
     padding: 0.4rem;
+}
+
+@media screen and (max-width: 450px) {
+
+    #screen {
+        flex-direction: column;
+    }
+
+    #screen #lost, #screen #gains, #screen #epargne, #result {
+        width: 95%;
+        height: 100%;
+        font-size: 1rem;
+    }
 }
