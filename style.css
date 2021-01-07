@@ -69,8 +69,12 @@ h1 {
 }
 
 button {
-    border: none;
+    border: solid black 1px;
     padding: 0.4rem;
+}
+
+button:hover {
+    background: lightblue;
 }
 
 @media screen and (max-width: 450px) {
