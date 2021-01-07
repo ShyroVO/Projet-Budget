@@ -7,6 +7,12 @@
 body {
     font-size: 62.5%;
     font-family: "Trebuchet MS", sans-serif;
+    background: url("http://new.graphicpanic.com/wp-content/uploads/2015/06/paper-white-texture-powerpoint-background.jpg");
+}
+
+h1 {
+    font-size: 3.5rem;
+    text-shadow: white 0 0 1rem;
 }
 
 #screen {

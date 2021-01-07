@@ -96,7 +96,18 @@ calcul.addEventListener('click', function (){
     let finalResult = ((resultGain + resultEpargne) - resultLost);
 
     //Screen of result:
-    resultScreen.innerHTML = finalResult ;
+    if (finalResult < 0){
+        resultScreen.style.color = '#EB2E6A';
+        resultScreen.innerHTML = finalResult + " (Attention! Solde négatif!)" ;
+    }
+    else if (finalResult === 0){
+        resultScreen.style.color = '#EBB22C';
+        resultScreen.innerHTML = finalResult + " (Attention! Solde nul!)" ;
+    }
+    else if (finalResult > 0){
+        resultScreen.style.color = '#38C98D';
+        resultScreen.innerHTML = finalResult + " (Solde positif!)" ;
+    }
 })
 
 // Reset button / Clean all tab:
@@ -110,4 +121,11 @@ resetAll.addEventListener('click', function (){
     for (let i = 0; i < littleDiv.length ; i++){
         littleDiv[i].remove();
     }
+})
+
+// Impress button:
+let impressButton = document.getElementById('impress');
+
+impressButton.addEventListener('click', function impress_page(){
+    window.print();
 })
